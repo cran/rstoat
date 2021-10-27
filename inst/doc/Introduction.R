@@ -14,19 +14,19 @@ library(rstoat)
 ## ---- eval = FALSE------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #  mol_login("your.email@address.com", "password")
 
-## -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#download_sample_data("destination/path")
-samples_directory <- download_sample_data()
-list.files(samples_directory)
+## ---- eval = FALSE------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#  #download_sample_data("destination/path")
+#  samples_directory <- download_sample_data()
+#  list.files(samples_directory)
 
-## -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-head(get_products())
-powerful_owl_sample <- read.csv("sample_data/powerful_owl_vignette.csv")
-head(powerful_owl_sample)
-simple_results <- start_annotation_simple(powerful_owl_sample[1:50,], "modis-lst_day-1000-1",
-                                          coords = c("decimalLongitude", "decimalLatitude"),
-                                          date = "eventDate")
-head(simple_results)
+## ---- eval = FALSE------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#  head(get_products())
+#  powerful_owl_sample <- read.csv("sample_data/powerful_owl_vignette.csv")
+#  head(powerful_owl_sample)
+#  simple_results <- start_annotation_simple(powerful_owl_sample[1:50,], "modis-lst_day-1000-1",
+#                                            coords = c("decimalLongitude", "decimalLatitude"),
+#                                            date = "eventDate")
+#  head(simple_results)
 
 ## ----eval = FALSE-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #  dataset_list <- my_datasets()
@@ -55,15 +55,21 @@ head(simple_results)
 #  ninox_result_dir <- download_annotation(job_list$annotation_id[1])
 #  melopsittacus_result_dir <- download_annotation(job_list$annotation_id[2])
 
+## ---- eval = FALSE------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#  #dataframe_name <- read_output("path/to/your/downloaded/data/directory")
+#  
+#  # This it the code you would use if you directly downloaded a successful annotation
+#  #ninox <- read_output(ninox_result_dir)
+#  
+#  # Instead, here we read the equivalent output from the sample data directory
+#  ninox <- read_output(paste0(samples_directory, "/powerful_owl_results")) # powerful owl data
+#  melopsittacus <- read_output(paste0(samples_directory, "/budgerigar_results")) # budgerigar data
+#  head(ninox)
+#  head(melopsittacus)
+
 ## -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#dataframe_name <- read_output("path/to/your/downloaded/data/directory")
-
-# This it the code you would use if you directly downloaded a successful annotation
-#ninox <- read_output(ninox_result_dir)
-
-# Instead, here we read the equivalent output from the sample data directory
-ninox <- read_output(paste0(samples_directory, "/powerful_owl_results"))
-head(ninox)
+melopsittacus <- rstoat::melopsittacus_short
+ninox <- rstoat::ninox_short
 
 ## -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 hist(ninox$modis_lst_day_1000_1-273.15, breaks = 50, xlab = "MODIS LST Day (degrees C)", ylab = "Count",
@@ -75,7 +81,6 @@ plot(as.Date(ninox$date.y), (ninox$modis_lst_day_1000_1-273.15),
 axis.Date(1, ninox$date, at=seq(as.Date("2009-01-01"), as.Date("2019-01-01"), by="years"))
 
 ## -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-melopsittacus <- read_output(paste0(samples_directory, "/budgerigar_results"))
 two_species <- rbind(melopsittacus[,1:10], ninox[,1:10])
 plot((modis_lst_day_1000_1-273.15) ~ as.Date(date.y), data = two_species,
      col = as.numeric(factor(two_species$scientificname)),

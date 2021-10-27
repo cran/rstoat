@@ -1,6 +1,6 @@
 Package: rstoat
-Version: 1.0.0
-Date: 2021-03-08
+Version: 1.0.1
+Date: 2021-10-21
 Title: R Interface to the 'STOAT' Platform
 Authors@R: c(person("John", "Wilshire", role = c("aut", "cre"), email = "john.wilshire@yale.edu"),
     person("Richard", "Li", role = "aut"),
@@ -15,11 +15,12 @@ URL: https://www.mol.org/stoat
 BugReports: https://github.com/MapofLife/rstoat/issues
 Encoding: UTF-8
 LazyData: true
-Imports: httr, jsonlite, curl, keyring, methods
+Depends: R (>= 2.10)
+Imports: httr, jsonlite, curl, keyring
 Suggests: knitr, rstudioapi, dplyr, rmarkdown
 VignetteBuilder: knitr, rmarkdown
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 NeedsCompilation: no
-Packaged: 2021-03-08 16:03:18 UTC; rich9
+Packaged: 2021-10-21 15:05:21 UTC; johnwilshire
 Repository: CRAN
-Date/Publication: 2021-03-10 19:50:02 UTC
+Date/Publication: 2021-10-27 19:50:02 UTC
