@@ -1,8 +1,8 @@
-56df6c452fc31f78d9e3821d4afcad06 *DESCRIPTION
+33fe33386582a74f32e76f43a56a0f55 *DESCRIPTION
 363e5122ef5ecdf04001935dd5444ec2 *LICENSE
 f90ee66720292dd47a0a83e08e7e6c4f *NAMESPACE
-4b29a28901bd0b2eacbb5a2085bdc91d *NEWS.md
-1af233eaa236b072ac3c983ee7c45a3b *R/annotation.R
+bddbd9262f0ba51703167d421722cc54 *NEWS.md
+828f7f3b1a86fbd71fbc71af0d35aa39 *R/annotation.R
 e3a6b6822cec2ca73a3263a04619be93 *R/auth.R
 b5aaaed5b1745780ce5b0e579d39f904 *R/data.R
 5171bcc20bb8fe9a9d653dd771c1ef44 *R/jobs.R
@@ -27,5 +27,5 @@ d4517dc8a1df865261ee8c3c77d5854d *man/get_products.Rd
 47c7596bc2f6bd60b4024584530b1581 *man/ninox_short.Rd
 06824147141502d4bf782b111e8b60fc *man/read_output.Rd
 f240264224f4677ef98a9b85d1c5d972 *man/start_annotation_batch.Rd
-7961b8b032a4f6bff8d4c8a0f6965b38 *man/start_annotation_simple.Rd
+8db7f504abaa8ba1735912d2e5d4578c *man/start_annotation_simple.Rd
 78aff92791cfdafce0f6b4499411ba93 *vignettes/Introduction.Rmd
